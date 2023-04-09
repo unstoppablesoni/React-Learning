@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Header from './Components/Header';
+import Movie from './Components/Movie';
+import movie from './movie.json'
+// import element  from 'prop-types';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+     <Header/>
+     <div className='Main'>
+     {
+      movie.map((element)=>{
+        return (
+       <Movie 
+       title={element.Title} 
+       year={element.Year}
+       img={element.Poster} 
+       />
+        )
+      })
+     }
+     </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
