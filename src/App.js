@@ -6,6 +6,8 @@ import movie from './movie.json'
 // import element  from 'prop-types';
 
 const App = () => {
+  
+
   return (
     <div className='App'>
      <Header/>
